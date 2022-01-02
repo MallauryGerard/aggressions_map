@@ -1,24 +1,56 @@
-# Lumen PHP Framework
+# Carte interactive des agressions à Namur (ou ailleurs...)
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+## Description
+Il s'agit d'une carte sur laquelle les utilisateurs peuvent déposer des points là où une agression a eu lieu en décrivant les faits.
+A l'origine, la carte a été créée pour la ville de Namur (en Belgique), mais elle peut être facilement adaptée à d'autres villes.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Installation
 
-## Official Documentation
+- Créer une base de données et la renseigner dans le .env
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+- Configurer les autres variables du .env
 
-## Contributing
+- Ajouter ces lignes au .env (ces informations serviront à accéder à l'interface d'admin)
+```
+ADMIN_USERNAME=
+ADMIN_PASSWORD=
+```
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Installer les dépendances
+```
+composer install
+```
 
-## Security Vulnerabilities
+- Exécuter les migrations
+```
+php artisan migrate
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## les améliorations possibles
 
-## License
+- [ ] Intégrer différentes langues
+- [ ] Ajouter un système de protection CSRF
+- [ ] Ajouter un flux RSS
+- [ ] Améliorer la partie "admin"
+- [ ] Améliorer le système de filtre par date
+- [ ] Ajouter un système de filtre par type d'agression
+- [ ] Centrer la carte en fonction de la localisation de l'utilisateur
+- [ ] Autre...
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+N'hésitez pas à me contacter si vous souhaitez vous investir dans ce projet.
+
+## Documentation générale de Lumen
+
+[Documentation](https://lumen.laravel.com/docs/8.x) 
+
+## Références du projet
+
+Plusieurs articles ont déjà été écrits au sujet de ce projet :
+
+[RTL INFO](https://www.rtl.be/info/regions/namur/un-jeune-cree-une-carte-interactive-reprenant-les-agressions-a-namur-video--1338245.aspx) 
+
+[La Meuse](https://lameuse.sudinfo.be/869317/article/2021-11-16/un-fossois-cree-une-carte-pour-signaler-les-agressions-sur-namur) 
+
+[RTBF](https://www.rtbf.be/info/regions/namur/detail_namur-une-carte-interactive-pour-signaler-des-agressions-developpee-par-un-jeune-de-24-ans?id=10879736) 
+
+[Lavenir](https://www.lavenir.net/cnt/dmf20211109_01634212/insecurite-a-namur-un-jeune-citoyen-cree-une-carte-des-agressions) 
